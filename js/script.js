@@ -57,4 +57,6 @@ function replaceShorthand (input) {
   return input.toLowerCase()
 }
 
+// Using clipboard.js, create button to copy plaintext
 $('#plain-text-area').text(cur)
+var clipboard = new Clipboard('#clipbtn');

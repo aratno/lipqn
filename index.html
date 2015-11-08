@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>lipqn</title>
     <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     <!-- Turns out KaTeX doesn't support all that much TeX -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
@@ -16,6 +17,9 @@
     </div>
     <div class="plaintext">
       <textarea id="plain-text-area"></textarea>
+      <button id="clipbtn" data-clipboard-action="copy" data-clipboard-target="#plain-text-area">
+        Copy
+      </button>
     </div>
   </body>
   <script src="./js/script.js"></script>
