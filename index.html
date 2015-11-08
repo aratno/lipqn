@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <title>lipqn</title>
     <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- Turns out KaTeX doesn't support all that much TeX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <p>
-      hello
-    </p>
+    <div class="rendered">
+      <h1>title</h1>
+      <math></math>
+    </div>
   </body>
+  <script src="./js/script.js"></script>
 </html>
