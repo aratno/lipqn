@@ -5,14 +5,14 @@ html {
 .rendered {
   position: fixed;
   left: 50%;
-  top: 30%;
+  top: 32%;
   transform: translate(-50%, -50%);
 }
 
 .plaintext {
   position: fixed;
   width: 40%;
-  height: 20%;
+  height: 30%;
   left: 50%;
   top: 80%;
   transform: translate(-50%, 0%);
@@ -48,4 +48,25 @@ button {
 
 button:focus{
   outline:none
+}
+
+h1 {
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-width: 1px;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: dotted;
+  border-left-style: none;
 }
