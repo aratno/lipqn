@@ -1,6 +1,6 @@
 // We'll want to get input for the following later, but for now it's a constant
 
-const tier = 4
+const tier = 10
 const omega = 'a'
 const p = ['\\sqrt{a}', // [a] not yet supported by KaTeX
          '(-a)',
@@ -56,3 +56,5 @@ function replaceGlyphs (input) {
 function replaceShorthand (input) {
   return input.toLowerCase()
 }
+
+$('#plain-text-area').text(cur)
