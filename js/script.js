@@ -4,7 +4,7 @@ const tier = 4
 const omega = 'a'
 const p = ['\\sqrt{a}', // [a] not yet supported by KaTeX
          '(-a)',
-         // TODO '\\frac{a}{a}', This is a problem because it replaces 'a' in frac
+         '\\frAc{a}{a}', // This is a problem because it replaces 'a' in frac
          'a + a',
          '(a) - (a)',
          'b^{c}',
@@ -29,27 +29,30 @@ for (var i = 0; i < tier; i++) {
   cur = cur.replace('a', operation)
 }
 
-// Try to get MathJax to put the cur string into this div
-console.log(cur)
-$('math').html(katex.renderToString(replaceGlyphs(cur)))
-
-console.log(replaceGlyphs(cur))
+cur = replaceGlyphs(cur)
+cur = replaceShorthand(cur)
+$('math').html(katex.renderToString(cur))
 
 // After all this, I need to replace all the 'a's with fancy-looking Greek letters
 function replaceGlyphs (input) {
-  const glyphs = ['\\alpha',
-                  '\\beta',
-                  '\\gamma',
-                  '\\delta',
-                  '\\theta',
-                  '\\kappa',
-                  '\\lambda',
+  const glyphs = ['\\AlphA',
+                  '\\BetA',
+                  '\\gAmmA',
+                  '\\deltA',
+                  '\\thetA',
+                  '\\kAppA',
+                  '\\lAmBdA',
                   '\\mu',
                   '\\pi',
-                  '\\tau',
+                  '\\tAu',
                  ]
   var output = input
   output = output.replace('a', glyphs[ Math.floor(Math.random() * glyphs.length) ])
   output = output.replace('b', glyphs[ Math.floor(Math.random() * glyphs.length) ])
   return output
+}
+
+// Properly replace shorthands for functions with 'a' in them, like 'frac'
+function replaceShorthand (input) {
+  return input.toLowerCase()
 }
