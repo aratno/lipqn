@@ -1,6 +1,6 @@
 // TODO We'll want to get input for the following later, but for now it's a constant
 
-const tier = 12
+const tier = 20
 const omega = 'a'
 var p = ['\\sqrt{a}', // [a] not yet supported by KaTeX
          // '-a', // This one sucks
