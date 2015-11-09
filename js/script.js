@@ -74,4 +74,14 @@ function generate () {
   var clipboard = new Clipboard('#clipbtn');
 }
 
-$('h1').click(generate)
+$('#title').mousedown(function(){
+  $(this).css({
+  'color': ' #7A7A7A'
+  });
+}).mouseup(function(){
+  $(this).css({
+  'color': 'black'
+  });
+});
+
+$('h1').click(generate);
