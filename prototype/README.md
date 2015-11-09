@@ -1,0 +1,1 @@
+I plan on making the webpage look like a LaTeX article like above, mostly in lorem ipsum with a displayed random equation in a break in the words. From there, the user can scroll down to read more about how `lipqn` works and click a link to generate a new equation, all in the article format.
