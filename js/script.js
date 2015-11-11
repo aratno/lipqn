@@ -7,26 +7,31 @@ $('document').ready(function () {
 function generate () {
   const tier = 20
   const omega = 'a'
-  var p = ['\\sqrt{a}', // [a] not yet supported by KaTeX
-           // '-a', // This one sucks
-           '\\frAc{a}{a}', // This is a problem because it replaces 'a' in frac
-           'a + a',
-           'a - a',
-           'b^{c}',
-           '\\sin (a)',
-           '\\ln (a)',
-           '\\log_{b}(a)',
-           // '\\Gamma(a)', This is a problem because it replaces 'a' in Gamma
-           'b^e',
-           'e^{b}',
-           'a - b',
-           'a + b',
-          ]
+  var p_1 = ['a + a',
+             'a - a',
+             '(\\frAc{a}{a})'
+            ]
+  var p   = ['\\sqrt{a}', // [a] not yet supported by KaTeX
+             // '-a', // This one sucks
+             'b^{c}',
+             '\\sin (a)',
+             '\\ln (a)',
+             '\\log_{b}(a)',
+             // '\\Gamma(a)', This is a problem because it replaces 'a' in Gamma
+             'b^e',
+             'e^{b}'
+             //'a - b',
+             //'a + b'
+            ]
 
   // Replace all the parentheses with scalable parentheses
   for (var i = 0; i < p.length; i++) {
     p[i] = p[i].replace('(', '\\left(')
     p[i] = p[i].replace(')', '\\right)')
+  }
+  for (var i = 0; i < p_1.length; i++) {
+    p_1[i] = p_1[i].replace('(', '\\left(')
+    p_1[i] = p_1[i].replace(')', '\\right)')
   }
 
   // To fix the problem of replacing 'a' in function names, I need to create a
@@ -34,11 +39,21 @@ function generate () {
   // replace 'frac' with 'frc'
 
   var cur = omega
+  const simpleThreshold = 6
+  var index
+  var operation
 
   for (var i = 0; i < tier; i++) {
-    var index = Math.floor(Math.random() * p.length)
-    var operation = p[ index ]
-    cur = cur.replace('a', operation)
+    if ( i < simpleThreshold) {
+      index = Math.floor(Math.random() * p_1.length)
+      operation = p_1[ index ]
+      cur = cur.replace('a', operation)
+    }
+    else {
+      index = Math.floor(Math.random() * p.length)
+      operation = p[ index ]
+      cur = cur.replace('a', operation)
+    }
   }
 
   cur = replaceGlyphs(cur)
