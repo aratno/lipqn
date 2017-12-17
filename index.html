@@ -3,26 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>lipqn</title>
-    <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    <!-- Turns out KaTeX doesn't support all that much TeX -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
-    <link rel="stylesheet" href="./css/normalize.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Fira+Mono&subset=greek,latin' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" type="text/javascript"></script>
   </head>
   <body>
-    <h1><a>lipqn</a></h1>
+    <h1>lipqn</h1>
     <div class="rendered">
       <math></math>
     </div>
-    <div class="plaintext">
-      <textarea id="plain-text-area" readonly></textarea>
-    </div>
-    <button id="clipbtn" data-clipboard-action="copy" data-clipboard-target="#plain-text-area">
-      Copy
-    </button>
   </body>
-  <script src="./js/script.js"></script>
 </html>
